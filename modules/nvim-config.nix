@@ -17,4 +17,6 @@
     lspSignature.enable = true;
     lsplines.enable = true;
   };
+
+  statusline.lualine.enable = true;
 }
