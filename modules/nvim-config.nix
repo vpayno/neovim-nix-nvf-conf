@@ -40,6 +40,17 @@
     lsplines.enable = true;
   };
 
+  spellcheck = {
+    enable = true;
+    extraSpellWords = {
+      "en.utf-8" = [
+        "nix"
+        "nvf"
+      ];
+    };
+    programmingWordlist.enable = true;
+  };
+
   statusline.lualine.enable = true;
   telescope.enable = true;
   autocomplete.nvim-cmp.enable = true;
