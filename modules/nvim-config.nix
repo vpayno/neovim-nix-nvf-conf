@@ -19,4 +19,5 @@
   };
 
   statusline.lualine.enable = true;
+  telescope.enable = true;
 }
