@@ -3,6 +3,16 @@
 My neovim configuration manged with [Nix](https://determinate.systems/nix/) and
 [nvf](https://github.com/NotAShelf/nvf).
 
+## About
+
+Looking for a new way of managing vim configurations that I can also take with
+me to other system. One of my favorite Nixims is that you can install/run
+software without interfering with the dependency trees of other applications.
+
+It's also a good way to practice writing
+[Nix Flakes](https://nixos.wiki/wiki/Flakes) and
+[NixOS Configurations](https://wiki.nixos.org/wiki/NixOS_Wiki).
+
 ## nvf Documentation
 
 - [Manual](https://notashelf.github.io/nvf/)
