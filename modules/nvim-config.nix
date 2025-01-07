@@ -23,4 +23,9 @@
   autocomplete.nvim-cmp.enable = true;
 
   enableEditorconfig = true;
+
+  visuals.indent-blankline.setupOpts.whitespace = {
+    highlight = true;
+    remove_blankline_trail = true;
+  };
 }
