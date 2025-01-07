@@ -24,6 +24,19 @@
 
   enableEditorconfig = true;
 
+  git = {
+    enable = true;
+    vim-fugitive.enable = true;
+  };
+
+  filetree.nvimTree.setupOpts.git = {
+    enable = true;
+  };
+
+  filetree.neo-tree.setupOpts = {
+    enable_git_status = true;
+  };
+
   visuals.indent-blankline.setupOpts.whitespace = {
     highlight = true;
     remove_blankline_trail = true;
