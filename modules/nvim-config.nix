@@ -9,6 +9,28 @@
     enableFormat = true;
     enableLSP = true;
     enableTreesitter = true;
+
+    assembly.enable = true;
+    bash.enable = true;
+    clang.enable = true;
+    dart.enable = true;
+    gleam.enable = true;
+    go.enable = true;
+    haskell.enable = true;
+    java.enable = true;
+    kotlin.enable = true;
+    lua.enable = true;
+    markdown.enable = true;
+    nix.enable = true;
+    python = {
+      enable = true;
+      format.type = "black-and-isort";
+    };
+    r.enable = true;
+    rust.enable = true;
+    sql.enable = true;
+    terraform.enable = true;
+    ts.enable = true;
   };
 
   lsp = {
