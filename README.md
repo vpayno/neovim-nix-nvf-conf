@@ -46,3 +46,29 @@ To update it:
 ```bash { name=update-nvf-nvim-maximal excludeFromRunAll=true }
 nix profile upgrade nvf
 ```
+
+## neovim-nix-nvf-conf Usage
+
+To run the local checkout:
+
+```bash { name=nix-run-local excludeFromRunAll=true }
+nix run .
+```
+
+To run the flake:
+
+```bash { name=nix-run-flake excludeFromRunAll=true }
+nix run git+ssh://github.com/vpayno/neovim-nix-nvf-conf  # -- nvim arguments
+```
+
+To manually install it on the default profile:
+
+```bash { name=nix-profile-install excludeFromRunAll=true }
+nix profile install git+ssh://github.com/vpayno/neovim-nix-nvf-conf
+```
+
+To run the local checkout:
+
+```bash { name=nix-profile-update excludeFromRunAll=true }
+nix profile upgrade git+ssh://github.com/vpayno/neovim-nix-nvf-conf
+```
