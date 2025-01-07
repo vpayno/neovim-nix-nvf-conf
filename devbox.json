@@ -1,0 +1,15 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.13.7/.schema/devbox.schema.json",
+  "packages": [
+    "glow@latest",
+    "runme@latest",
+    "bashInteractive@latest",
+    "nix@latest",
+    "nixfmt-rfc-style@latest",
+    "git@latest"
+  ],
+  "shell": {
+    "init_hook": [],
+    "scripts":   {}
+  }
+}
