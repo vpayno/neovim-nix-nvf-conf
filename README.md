@@ -20,7 +20,8 @@ It's also a good way to practice writing
 
 ## nvf Examples
 
-To run the default nvim editor managed with `nvf` and [Home Manager](https://github.com/nix-community/home-manager):
+To run the default nvim editor managed with `nvf` and
+[Home Manager](https://github.com/nix-community/home-manager):
 
 ```bash { name=run-nvf-nvim-default excludeFromRunAll=true }
 nix run github:notashelf/nvf
