@@ -73,6 +73,11 @@
 
   options.mouse = "v";
 
+  dashboard = {
+    dashboard-nvim.enable = true;
+    startify.enable = true;
+  };
+
   visuals.indent-blankline.setupOpts.whitespace = {
     highlight = true;
     remove_blankline_trail = true;
