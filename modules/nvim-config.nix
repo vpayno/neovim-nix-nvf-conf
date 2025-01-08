@@ -78,8 +78,11 @@
     startify.enable = true;
   };
 
-  visuals.indent-blankline.setupOpts.whitespace = {
-    highlight = true;
-    remove_blankline_trail = true;
+  visuals = {
+    nvim-scrollbar.enable = true;
+    indent-blankline.setupOpts.whitespace = {
+      highlight = true;
+      remove_blankline_trail = true;
+    };
   };
 }
