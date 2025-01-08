@@ -38,6 +38,7 @@
     formatOnSave = true;
     lspSignature.enable = true;
     lsplines.enable = true;
+    lspsaga.enable = true;
   };
 
   spellcheck = {
