@@ -71,5 +71,5 @@ nix profile install git+ssh://github.com/vpayno/neovim-nix-nvf-conf
 To run the local checkout:
 
 ```bash { name=nix-profile-update excludeFromRunAll=true }
-nix profile upgrade git+ssh://github.com/vpayno/neovim-nix-nvf-conf
+nix profile upgrade neovim-nix-nvf-conf
 ```
