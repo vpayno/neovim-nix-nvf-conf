@@ -70,6 +70,8 @@
     enable_git_status = true;
   };
 
+  options.mouse = "v";
+
   visuals.indent-blankline.setupOpts.whitespace = {
     highlight = true;
     remove_blankline_trail = true;
