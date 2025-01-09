@@ -74,6 +74,10 @@
     enable_git_status = true;
   };
 
+  lazy = {
+    enable = true;
+  };
+
   comments.comment-nvim.enable = true;
 
   utility.outline.aerial-nvim.enable = true;
