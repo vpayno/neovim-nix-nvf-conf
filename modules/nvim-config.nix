@@ -34,6 +34,7 @@
     sql.enable = true;
     terraform.enable = true;
     ts.enable = true;
+    typst.enable = true;
   };
 
   lsp = {
