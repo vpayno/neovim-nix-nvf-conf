@@ -74,6 +74,8 @@
     enable_git_status = true;
   };
 
+  comments.comment-nvim.enable = true;
+
   utility.outline.aerial-nvim.enable = true;
 
   options.mouse = "v";
