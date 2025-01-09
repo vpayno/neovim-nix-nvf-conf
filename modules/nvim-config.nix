@@ -83,6 +83,11 @@
   binds.whichKey.enable = true;
 
   ui = {
+    smartcolumn = {
+      enable = true;
+      setupOpts.colorcolumn = ["80" "120" "240"];
+    };
+
     borders.plugins.which-key.enable = true;
     borders.plugins.which-key.style = "rounded";
   };
