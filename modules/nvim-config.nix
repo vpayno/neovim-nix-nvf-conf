@@ -83,6 +83,8 @@
   binds.whichKey.enable = true;
 
   ui = {
+    illuminate.enable = true;
+
     smartcolumn = {
       enable = true;
       setupOpts.colorcolumn = ["80" "120" "240"];
