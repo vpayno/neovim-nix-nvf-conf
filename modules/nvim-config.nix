@@ -80,6 +80,13 @@
 
   comments.comment-nvim.enable = true;
 
+  binds.whichKey.enable = true;
+
+  ui = {
+    borders.plugins.which-key.enable = true;
+    borders.plugins.which-key.style = "rounded";
+  };
+
   utility.outline.aerial-nvim.enable = true;
 
   options.mouse = "v";
