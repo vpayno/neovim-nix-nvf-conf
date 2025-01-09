@@ -19,7 +19,10 @@
     haskell.enable = true;
     java.enable = true;
     kotlin.enable = true;
-    lua.enable = true;
+    lua = {
+      enable = true;
+      lsp.neodev.enable = true;
+    };
     markdown.enable = true;
     nix.enable = true;
     python = {
