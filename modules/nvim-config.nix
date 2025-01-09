@@ -71,6 +71,8 @@
     enable_git_status = true;
   };
 
+  utility.outline.aerial-nvim.enable = true;
+
   options.mouse = "v";
 
   dashboard = {
