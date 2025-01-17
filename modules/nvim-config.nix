@@ -30,6 +30,7 @@
       format.type = "black-and-isort";
     };
     r.enable = true;
+    ruby.enable = true;
     rust.enable = true;
     sql.enable = true;
     terraform.enable = true;
