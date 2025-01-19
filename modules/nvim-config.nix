@@ -61,7 +61,9 @@
   telescope.enable = true;
   autocomplete.nvim-cmp.enable = true;
 
-  enableEditorconfig = true;
+  globals = {
+    editorconfig = true;
+  };
 
   git = {
     enable = true;
