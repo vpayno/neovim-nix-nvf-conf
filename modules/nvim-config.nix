@@ -50,8 +50,23 @@
     enable = true;
     extraSpellWords = {
       "en.utf-8" = [
+        "vpayno"
+        "payno"
+        "Payno"
         "nix"
         "nvf"
+        "Nix"
+        "NixOS"
+        "nixos"
+        "github"
+        "GitHub"
+        "gitlab"
+        "GitLab"
+        "aarch64"
+        "macOS"
+        "macos"
+        "osx"
+        "OSX"
       ];
     };
     programmingWordlist.enable = true;
