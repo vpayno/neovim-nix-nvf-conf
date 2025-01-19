@@ -1,9 +1,9 @@
+# configuration.nix
 {
   pkgs,
   lib,
   ...
-}:
-{
+}: {
   programs.nvf = {
     enable = true;
     settings = {
