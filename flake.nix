@@ -20,12 +20,20 @@
   in {
     formatter = forAllSystems (system: nixpkgsFor.${system}.nixfmt-rfc-style);
 
-    packages.x86_64-linux.default =
-      (nvf.lib.neovimConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        modules = [./nvf-configuration.nix];
-      })
-      .neovim;
+    packages = {
+      aarch64-linux.default =
+        (nvf.lib.neovimConfiguration {
+          pkgs = nixpkgs.legacyPackages.aarch64-linux;
+          modules = [./nvf-configuration.nix];
+        })
+        .neovim;
+      x86_64-linux.default =
+        (nvf.lib.neovimConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          modules = [./nvf-configuration.nix];
+        })
+        .neovim;
+    };
 
     nixosConfiguration.nixos = nixpkgs.lib.nixosSystem {
       modules = [
