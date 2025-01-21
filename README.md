@@ -59,13 +59,13 @@ nix run .
 To run the flake:
 
 ```bash { name=nix-run-flake excludeFromRunAll=true }
-nix run git+ssh://github.com/vpayno/neovim-nix-nvf-conf  # -- nvim arguments
+nix run github:vpayno/neovim-nix-nvf-conf  # -- nvim arguments
 ```
 
 To manually install it on the default profile:
 
 ```bash { name=nix-profile-install excludeFromRunAll=true }
-nix profile install git+ssh://github.com/vpayno/neovim-nix-nvf-conf
+nix profile install github:vpayno/neovim-nix-nvf-conf
 ```
 
 To run the local checkout:
