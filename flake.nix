@@ -1,7 +1,7 @@
 # flake.nix
 {
   inputs = {
-    nixpkgs.url = "github:nixOS/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixOS/nixpkgs/nixos-unstable";
     nvf.url = "github:notashelf/nvf";
   };
 
