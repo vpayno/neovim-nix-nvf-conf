@@ -13,7 +13,16 @@
     assembly.enable = true;
     bash.enable = true;
     clang.enable = true;
-    dart.enable = true;
+    dart = {
+      enable = false; # error: attribute 'flutter-tools' missing
+      flutter-tools = {
+        enable = true;
+        color = {
+          enable = true;
+          virtualText.enable = true;
+        };
+      };
+    };
     gleam.enable = true;
     go.enable = true;
     haskell.enable = true;
@@ -21,7 +30,7 @@
     kotlin.enable = true;
     lua = {
       enable = true;
-      lsp.neodev.enable = true;
+      lsp.lazydev.enable = true;
     };
     markdown.enable = true;
     nix.enable = true;
