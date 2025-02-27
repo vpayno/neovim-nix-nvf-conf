@@ -33,7 +33,18 @@
       lsp.lazydev.enable = true;
     };
     markdown.enable = true;
-    nix.enable = true;
+    nix = {
+      enable = true;
+      extraDiagnostics = {
+        enable = true;
+        types = [
+          "statix"
+          "deadnix"
+        ];
+      };
+      format.type = "nixfmt";
+      lsp.server = "nil";
+    };
     python = {
       enable = true;
       format.type = "black-and-isort";
