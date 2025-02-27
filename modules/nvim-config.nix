@@ -48,6 +48,8 @@
     python = {
       enable = true;
       format.type = "black-and-isort";
+      dap.enable = true;
+      lsp.server = "basedpyright";
     };
     r.enable = true;
     ruby.enable = true;
