@@ -11,7 +11,10 @@
     enableTreesitter = true;
 
     assembly.enable = true;
-    bash.enable = true;
+    bash = {
+      enable = true;
+      extraDiagnostics.enable = true;
+    };
     clang.enable = true;
     dart = {
       enable = false; # error: attribute 'flutter-tools' missing
