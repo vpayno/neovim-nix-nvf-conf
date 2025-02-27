@@ -27,7 +27,10 @@
       };
     };
     gleam.enable = true;
-    go.enable = true;
+    go = {
+      enable = true;
+      dap.enable = true;
+    };
     haskell.enable = true;
     java.enable = true;
     kotlin.enable = true;
