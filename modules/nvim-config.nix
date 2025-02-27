@@ -126,7 +126,11 @@
 
     smartcolumn = {
       enable = true;
-      setupOpts.colorcolumn = ["80" "120" "240"];
+      setupOpts.colorcolumn = [
+        "80"
+        "120"
+        "240"
+      ];
     };
 
     borders.plugins.which-key.enable = true;
