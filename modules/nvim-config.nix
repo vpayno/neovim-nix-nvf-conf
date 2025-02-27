@@ -53,7 +53,11 @@
     };
     r.enable = true;
     ruby.enable = true;
-    rust.enable = true;
+    rust = {
+      enable = true;
+      crates.enable = true;
+      dap.enable = true;
+    };
     sql.enable = true;
     terraform.enable = true;
     ts.enable = true;
