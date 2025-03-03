@@ -139,7 +139,10 @@
 
   comments.comment-nvim.enable = true;
 
-  binds.whichKey.enable = true;
+  binds = {
+    cheatsheet.enable = true;
+    whichKey.enable = true;
+  };
 
   ui = {
     illuminate.enable = true;
