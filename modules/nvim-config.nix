@@ -114,6 +114,8 @@
     nvim-cmp.enable = true;
   };
 
+  autopairs.nvim-autopairs.enable = false;
+
   globals = {
     editorconfig = true;
   };
