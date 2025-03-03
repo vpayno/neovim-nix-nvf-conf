@@ -73,7 +73,7 @@
   lsp = {
     enable = true;
     formatOnSave = true;
-    lspSignature.enable = true;
+    lspSignature.enable = true; # not using blink-cmp's lsp signature
     lsplines.enable = true;
     lspsaga.enable = true;
   };
@@ -106,7 +106,13 @@
 
   statusline.lualine.enable = true;
   telescope.enable = true;
-  autocomplete.nvim-cmp.enable = true;
+  autocomplete = {
+    blink-cmp = {
+      enable = false;
+      setupOpts.signature.enabled = false;
+    };
+    nvim-cmp.enable = true;
+  };
 
   globals = {
     editorconfig = true;
