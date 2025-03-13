@@ -2,7 +2,11 @@
 {
   inputs = {
     nixpkgs.url = "github:nixOS/nixpkgs/nixos-unstable";
-    nvf.url = "github:notashelf/nvf";
+
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     treefmt-conf = {
       url = "github:vpayno/nix-treefmt-conf";
