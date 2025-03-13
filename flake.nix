@@ -3,6 +3,11 @@
   inputs = {
     nixpkgs.url = "github:nixOS/nixpkgs/nixos-unstable";
     nvf.url = "github:notashelf/nvf";
+
+    treefmt-conf = {
+      url = "github:vpayno/nix-treefmt-conf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -10,6 +15,7 @@
       self,
       nixpkgs,
       nvf,
+      treefmt-conf,
       ...
     }:
     let
@@ -23,7 +29,7 @@
       nixpkgsFor = forAllSystems (system: import nixpkgs { inherit system; });
     in
     {
-      formatter = forAllSystems (system: nixpkgsFor.${system}.nixfmt-rfc-style);
+      formatter = forAllSystems (system: treefmt-conf.formatter.${system});
 
       packages = {
         aarch64-linux.default =
