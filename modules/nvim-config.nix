@@ -74,7 +74,6 @@
     enable = true;
     formatOnSave = true;
     lspSignature.enable = true; # not using blink-cmp's lsp signature
-    lsplines.enable = true;
     lspsaga.enable = true;
     otter-nvim.enable = true;
   };
