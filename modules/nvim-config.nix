@@ -160,6 +160,18 @@
     borders.plugins.which-key.style = "rounded";
   };
 
+  diagnostics = {
+    enable = true;
+    nvim-lint = {
+      enable = true;
+      lint_after_save = true;
+    };
+    config = {
+      virtual_lines = false; # underneath
+      virtual_text = true; # at the end of the line
+    };
+  };
+
   utility.outline.aerial-nvim.enable = true;
 
   options.mouse = "v";
