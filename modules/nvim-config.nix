@@ -160,6 +160,16 @@
     borders.plugins.which-key.style = "rounded";
   };
 
+  debugger = {
+    nvim-dap = {
+      enable = true;
+      ui = {
+        enable = true;
+        autoStart = true;
+      };
+    };
+  };
+
   diagnostics = {
     enable = true;
     nvim-lint = {
