@@ -182,6 +182,12 @@
     };
   };
 
+  fzf-lua = {
+    enable = true;
+    profile = "telescope";
+    setupOpts.winopts.border = "rounded";
+  };
+
   utility.outline.aerial-nvim.enable = true;
 
   options.mouse = "v";
