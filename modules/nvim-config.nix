@@ -188,6 +188,28 @@
     setupOpts.winopts.border = "rounded";
   };
 
+  notes = {
+    mind-nvim = {
+      enable = true;
+    };
+    neorg = {
+      enable = true;
+      treesitter = {
+        enable = true;
+      };
+    };
+    obsidian = {
+      enable = false; # workspace not working, is it the $HOME var?
+      setupOpts.daily_notes = {
+        folder = "$HOME/obsidian-workspace"; # this should be a symlink to the real workspace
+        date_format = "YYYY-MM-DD";
+      };
+    };
+    todo-comments = {
+      enable = true;
+    };
+  };
+
   utility.outline.aerial-nvim.enable = true;
 
   options.mouse = "v";
