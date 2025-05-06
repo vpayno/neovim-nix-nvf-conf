@@ -7,7 +7,6 @@
 
   languages = {
     enableFormat = true;
-    enableLSP = true;
     enableTreesitter = true;
 
     assembly.enable = true;
