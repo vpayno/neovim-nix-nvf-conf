@@ -26,6 +26,7 @@
       supportedSystems = [
         "aarch64-linux"
         "x86_64-linux"
+        "riscv64-linux"
       ];
 
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
@@ -39,6 +40,11 @@
         aarch64-linux.default =
           (nvf.lib.neovimConfiguration {
             pkgs = nixpkgs.legacyPackages.aarch64-linux;
+            modules = [ ./nvf-configuration.nix ];
+          }).neovim;
+        riscv64-linux.default =
+          (nvf.lib.neovimConfiguration {
+            pkgs = nixpkgs.legacyPackages.riscv64-linux;
             modules = [ ./nvf-configuration.nix ];
           }).neovim;
         x86_64-linux.default =
