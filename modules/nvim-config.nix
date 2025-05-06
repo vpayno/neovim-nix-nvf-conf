@@ -187,6 +187,7 @@
   options.mouse = "v";
 
   dashboard = {
+    alpha.enable = false;
     dashboard-nvim.enable = true;
     startify.enable = true;
   };
