@@ -192,7 +192,7 @@
       enable = true;
     };
     neorg = {
-      enable = true;
+      enable = false;
       treesitter = {
         enable = true;
       };
