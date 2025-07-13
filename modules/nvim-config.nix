@@ -101,6 +101,7 @@
       ];
     };
     programmingWordlist.enable = true;
+    vim-dirtytalk.enable = true;
   };
 
   statusline.lualine.enable = true;
