@@ -13,6 +13,17 @@ It's also a good way to practice writing
 [Nix Flakes](https://nixos.wiki/wiki/Flakes) and
 [NixOS Configurations](https://wiki.nixos.org/wiki/NixOS_Wiki).
 
+## Manual steps
+
+### Spell
+
+If `~/.local/share/nvf/site/spell/programming.utf-8.spl` is missing on startup,
+run
+
+```vimscript
+:DirtytalkUpdate
+```
+
 ## nvf Documentation
 
 - [Manual](https://notashelf.github.io/nvf/)
