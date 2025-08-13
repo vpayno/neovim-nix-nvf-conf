@@ -27,6 +27,8 @@
         "aarch64-linux"
         "x86_64-linux"
         "riscv64-linux"
+        "aarch64-darwin"
+        "x86_64-darwin"
       ];
 
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
@@ -36,23 +38,13 @@
     {
       formatter = forAllSystems (system: treefmt-conf.formatter.${system});
 
-      packages = {
-        aarch64-linux.default =
+      packages = forAllSystems (system: {
+        default =
           (nvf.lib.neovimConfiguration {
-            pkgs = nixpkgs.legacyPackages.aarch64-linux;
+            pkgs = nixpkgs.legacyPackages.${system};
             modules = [ ./nvf-configuration.nix ];
           }).neovim;
-        riscv64-linux.default =
-          (nvf.lib.neovimConfiguration {
-            pkgs = nixpkgs.legacyPackages.riscv64-linux;
-            modules = [ ./nvf-configuration.nix ];
-          }).neovim;
-        x86_64-linux.default =
-          (nvf.lib.neovimConfiguration {
-            pkgs = nixpkgs.legacyPackages.x86_64-linux;
-            modules = [ ./nvf-configuration.nix ];
-          }).neovim;
-      };
+      });
 
       nixosConfiguration.nixos = nixpkgs.lib.nixosSystem {
         modules = [
