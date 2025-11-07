@@ -1,4 +1,5 @@
 {
+  pkgs,
   ...
 }@args:
 {
@@ -72,6 +73,7 @@
       ts.enable = true;
       typst = {
         enable = true;
+        format.package = pkgs.typstyle;
       };
     };
 
