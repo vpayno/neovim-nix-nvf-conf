@@ -5,5 +5,7 @@
   ...
 }:
 {
-  vim = import ./modules/nvim-config.nix;
+  imports = [
+    ./modules/nvim-config.nix
+  ];
 }
