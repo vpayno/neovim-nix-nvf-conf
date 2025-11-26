@@ -67,6 +67,7 @@
         enable = true;
         crates.enable = true;
         dap.enable = true;
+        treesitter.enable = true;
       };
       sql.enable = true;
       terraform.enable = true;
