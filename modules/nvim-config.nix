@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   ...
 }@args:
 {
@@ -87,6 +88,9 @@
         enable = true;
       };
       otter-nvim.enable = true;
+      null-ls = {
+        enable = lib.mkDefault false;
+      };
     };
 
     spellcheck = {
