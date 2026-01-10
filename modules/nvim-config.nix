@@ -53,20 +53,29 @@
             "deadnix"
           ];
         };
-        format.type = "nixfmt";
-        lsp.server = "nil";
+        format.type = [
+          "nixfmt"
+        ];
+        lsp.servers = [
+          "nil"
+        ];
       };
       python = {
         enable = true;
-        format.type = "black-and-isort";
+        format.type = [
+          "black"
+          "isort"
+        ];
         dap.enable = true;
-        lsp.server = "basedpyright";
+        lsp.servers = [
+          "basedpyright"
+        ];
       };
       r.enable = true;
       ruby.enable = true;
       rust = {
         enable = true;
-        crates.enable = true;
+        extensions.crates-nvim.enable = true;
         dap.enable = true;
         treesitter.enable = true;
       };
@@ -75,7 +84,6 @@
       ts.enable = true;
       typst = {
         enable = true;
-        format.package = pkgs.typstyle;
       };
     };
 
