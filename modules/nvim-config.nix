@@ -84,6 +84,46 @@
       ts.enable = true;
       typst = {
         enable = true;
+        format = {
+          type = [
+            "typstyle"
+          ];
+        };
+        lsp = {
+          enable = true;
+          servers = [
+            "tinymist"
+          ]; # typst-lsp tinymist
+        };
+        treesitter = {
+          enable = true;
+        };
+        extensions = {
+          typst-concealer = {
+            enable = true;
+            mappings = {
+              toggleConcealing = "<leader>TT";
+            };
+            setupOpts = {
+              enabled_by_default = false;
+              color = "rgb(\"#f012be\")";
+              conceal_in_normal = false;
+              do_diagnostics = true;
+              ppi = 144; # 144 300
+              styling_type = "colorscheme"; # simple, none, colorscheme
+            };
+          };
+          typst-preview-nvim = {
+            enable = false;
+            setupOpts = {
+              extra_args = [
+                "--input=ver=draft"
+                "--ignore-system-fonts"
+              ];
+              open_cmd = "firefox %s -P typst-preview --class typst-preview";
+            };
+          };
+        };
       };
     };
 
