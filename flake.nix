@@ -46,6 +46,24 @@
           }).neovim;
       });
 
+      devShells = forAllSystems (
+        system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+        in
+        {
+          default = pkgs.mkShell {
+            name = "default";
+            packages = [
+              self.packages.${system}.default
+            ];
+            shellHook = ''
+              ${pkgs.lib.getExe pkgs.cowsay} "neovim-nix-nvf-conf shell"
+            '';
+          };
+        }
+      );
+
       nixosConfiguration.nixos = nixpkgs.lib.nixosSystem {
         modules = [
           ./configuration.nix
