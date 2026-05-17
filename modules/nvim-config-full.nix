@@ -82,7 +82,7 @@
       };
       sql.enable = true;
       terraform.enable = true;
-      ts.enable = true;
+      typescript.enable = true;
       typst = {
         enable = true;
         format = {
