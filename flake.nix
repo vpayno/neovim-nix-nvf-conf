@@ -39,10 +39,12 @@
       formatter = forAllSystems (system: treefmt-conf.formatter.${system});
 
       packages = forAllSystems (system: {
-        default =
+        default = self.packages.${system}.full;
+
+        full =
           (nvf.lib.neovimConfiguration {
             pkgs = nixpkgs.legacyPackages.${system};
-            modules = [ ./nvf-configuration.nix ];
+            modules = [ ./nvf-configuration-full.nix ];
           }).neovim;
       });
 
@@ -55,7 +57,7 @@
           default = pkgs.mkShell {
             name = "default";
             packages = [
-              self.packages.${system}.default
+              self.packages.${system}.full
             ];
             shellHook = ''
               ${pkgs.lib.getExe pkgs.cowsay} "neovim-nix-nvf-conf shell"

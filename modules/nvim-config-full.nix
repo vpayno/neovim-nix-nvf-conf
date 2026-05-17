@@ -1,3 +1,4 @@
+# ./modules/nvim-config-full.nix
 {
   pkgs,
   lib,
