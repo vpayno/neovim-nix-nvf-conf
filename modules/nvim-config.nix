@@ -253,9 +253,6 @@
     };
 
     notes = {
-      mind-nvim = {
-        enable = true;
-      };
       neorg = {
         enable = false;
         treesitter = {
