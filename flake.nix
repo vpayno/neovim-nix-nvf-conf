@@ -41,6 +41,12 @@
       packages = forAllSystems (system: {
         default = self.packages.${system}.full;
 
+        basic =
+          (nvf.lib.neovimConfiguration {
+            pkgs = nixpkgs.legacyPackages.${system};
+            modules = [ ./nvf-configuration-basic.nix ];
+          }).neovim;
+
         full =
           (nvf.lib.neovimConfiguration {
             pkgs = nixpkgs.legacyPackages.${system};

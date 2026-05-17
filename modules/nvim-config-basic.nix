@@ -1,0 +1,293 @@
+# ./modules/nvim-config-basic.nix
+{
+  pkgs,
+  lib,
+  ...
+}@args:
+{
+  vim = {
+    theme = {
+      enable = true;
+      name = "gruvbox";
+      style = "dark";
+    };
+
+    languages = {
+      enableFormat = true;
+      enableTreesitter = true;
+
+      assembly.enable = false;
+      bash = {
+        enable = true;
+        extraDiagnostics.enable = true;
+      };
+      clang.enable = false;
+      dart = {
+        enable = false; # error: attribute 'flutter-tools' missing
+        flutter-tools = {
+          enable = false;
+          color = {
+            enable = true;
+            virtualText.enable = true;
+          };
+        };
+      };
+      gleam.enable = false;
+      go = {
+        enable = true;
+        dap.enable = true;
+      };
+      haskell.enable = false;
+      java.enable = false;
+      kotlin.enable = false;
+      lua = {
+        enable = true;
+        lsp.lazydev.enable = true;
+      };
+      markdown.enable = true;
+      nix = {
+        enable = true;
+        extraDiagnostics = {
+          enable = true;
+          types = [
+            "statix"
+            "deadnix"
+          ];
+        };
+        format.type = [
+          "nixfmt"
+        ];
+        lsp.servers = [
+          "nil"
+        ];
+      };
+      python = {
+        enable = true;
+        format.type = [
+          "black"
+          "isort"
+        ];
+        dap.enable = true;
+        lsp.servers = [
+          "basedpyright"
+        ];
+      };
+      r.enable = false;
+      ruby.enable = false;
+      rust = {
+        enable = true;
+        extensions.crates-nvim.enable = true;
+        dap.enable = true;
+        treesitter.enable = true;
+      };
+      sql.enable = false;
+      terraform.enable = false;
+      typescript.enable = false;
+      typst = {
+        enable = false;
+        format = {
+          type = [
+            "typstyle"
+          ];
+        };
+        lsp = {
+          enable = true;
+          servers = [
+            "tinymist"
+          ]; # typst-lsp tinymist
+        };
+        treesitter = {
+          enable = true;
+        };
+        extensions = {
+          typst-concealer = {
+            enable = true;
+            mappings = {
+              toggleConcealing = "<leader>TT";
+            };
+            setupOpts = {
+              enabled_by_default = false;
+              color = "rgb(\"#f012be\")";
+              conceal_in_normal = false;
+              do_diagnostics = true;
+              ppi = 144; # 144 300
+              styling_type = "colorscheme"; # simple, none, colorscheme
+            };
+          };
+          typst-preview-nvim = {
+            enable = false;
+            setupOpts = {
+              extra_args = [
+                "--input=ver=draft"
+                "--ignore-system-fonts"
+              ];
+              open_cmd = "firefox %s -P typst-preview --class typst-preview";
+            };
+          };
+        };
+      };
+    };
+
+    lsp = {
+      enable = true;
+      formatOnSave = true;
+      lspSignature.enable = true; # not using blink-cmp's lsp signature
+      lspsaga.enable = true;
+      lspconfig = {
+        enable = true;
+      };
+      otter-nvim.enable = true;
+      null-ls = {
+        enable = lib.mkDefault false;
+      };
+    };
+
+    spellcheck = {
+      enable = true;
+      extraSpellWords = {
+        "en.utf-8" = [
+          "vpayno"
+          "payno"
+          "Payno"
+          "nix"
+          "nvf"
+          "Nix"
+          "NixOS"
+          "nixos"
+          "github"
+          "GitHub"
+          "gitlab"
+          "GitLab"
+          "aarch64"
+          "macOS"
+          "macos"
+          "osx"
+          "OSX"
+        ];
+      };
+      programmingWordlist.enable = true;
+      vim-dirtytalk.enable = true;
+    };
+
+    statusline.lualine.enable = true;
+    telescope.enable = true;
+    autocomplete = {
+      blink-cmp = {
+        enable = false;
+        setupOpts.signature.enabled = false;
+      };
+      nvim-cmp.enable = true;
+    };
+
+    autopairs.nvim-autopairs.enable = false;
+
+    globals = {
+      editorconfig = true;
+    };
+
+    git = {
+      enable = true;
+      vim-fugitive.enable = true;
+    };
+
+    filetree.nvimTree.setupOpts.git = {
+      enable = true;
+    };
+
+    filetree.neo-tree.setupOpts = {
+      enable_git_status = true;
+    };
+
+    lazy = {
+      enable = true;
+    };
+
+    comments.comment-nvim.enable = true;
+
+    binds = {
+      cheatsheet.enable = true;
+      whichKey.enable = true;
+    };
+
+    ui = {
+      illuminate.enable = true;
+
+      smartcolumn = {
+        enable = true;
+        setupOpts.colorcolumn = [
+          "80"
+          "120"
+          "240"
+        ];
+      };
+
+      borders.plugins.which-key.enable = true;
+      borders.plugins.which-key.style = "rounded";
+    };
+
+    debugger = {
+      nvim-dap = {
+        enable = true;
+        ui = {
+          enable = true;
+          autoStart = true;
+        };
+      };
+    };
+
+    diagnostics = {
+      enable = true;
+      nvim-lint = {
+        enable = true;
+        lint_after_save = true;
+      };
+      config = {
+        virtual_lines = false; # underneath
+        virtual_text = true; # at the end of the line
+      };
+    };
+
+    fzf-lua = {
+      enable = true;
+      profile = "telescope";
+      setupOpts.winopts.border = "rounded";
+    };
+
+    notes = {
+      neorg = {
+        enable = false;
+        treesitter = {
+          enable = true;
+        };
+      };
+      obsidian = {
+        enable = false; # workspace not working, is it the $HOME var?
+        setupOpts.daily_notes = {
+          folder = "$HOME/obsidian-workspace"; # this should be a symlink to the real workspace
+          date_format = "YYYY-MM-DD";
+        };
+      };
+      todo-comments = {
+        enable = true;
+      };
+    };
+
+    utility.outline.aerial-nvim.enable = true;
+
+    options.mouse = "v";
+
+    dashboard = {
+      alpha.enable = false;
+      dashboard-nvim.enable = true;
+      startify.enable = true;
+    };
+
+    visuals = {
+      nvim-scrollbar.enable = true;
+      indent-blankline.setupOpts.whitespace = {
+        highlight = true;
+        remove_blankline_trail = true;
+      };
+    };
+  };
+}
