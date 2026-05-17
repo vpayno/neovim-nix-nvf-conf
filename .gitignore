@@ -4,4 +4,6 @@
 /.devbox
 /.venv
 
-/result
+/result*
+
+/.direnv
