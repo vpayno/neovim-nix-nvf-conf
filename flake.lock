@@ -60,48 +60,26 @@
     },
     "mnw": {
       "locked": {
-        "lastModified": 1778541201,
-        "narHash": "sha256-n0twkzWexzjsoDycOTvvQNuGEdg62UiNHYcFCduYpKI=",
+        "lastModified": 1780772958,
+        "narHash": "sha256-VKKe8r4pwCGWZ3Yr9CPN129R4S3CKLSrlYqdYz3vKpM=",
         "owner": "Gerg-L",
         "repo": "mnw",
-        "rev": "1a3573fc9d2486738fe0b2cacc5cd10dd5f3a445",
+        "rev": "0871dbf63a53610c95db04439ed8ea4d6ec9c160",
         "type": "github"
       },
       "original": {
         "owner": "Gerg-L",
         "repo": "mnw",
-        "type": "github"
-      }
-    },
-    "ndg": {
-      "inputs": {
-        "nixpkgs": [
-          "nvf",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1779233504,
-        "narHash": "sha256-YIKEyzh0NFQlD0O92LQQNMoVCDwV8yw1Xz0Iu+4ZC5U=",
-        "owner": "feel-co",
-        "repo": "ndg",
-        "rev": "86f6644411a64d5413711895b7cf6e0e1be465b6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "feel-co",
-        "ref": "refs/tags/v2.8.0",
-        "repo": "ndg",
         "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1780243769,
-        "narHash": "sha256-x5UQuRsH3MqI0U9afaXSNqzTPSeZlRLvFAav2Ux1pNw=",
+        "lastModified": 1782467914,
+        "narHash": "sha256-pGvFkM8N0xEkIIXDe5YYfbEAvHrk4IxBrjB/x8OomhE=",
         "owner": "nixOS",
         "repo": "nixpkgs",
-        "rev": "331800de5053fcebacf6813adb5db9c9dca22a0c",
+        "rev": "e73de5be04e0eff4190a1432b946d469c794e7b4",
         "type": "github"
       },
       "original": {
@@ -132,18 +110,17 @@
         "flake-compat": "flake-compat",
         "flake-parts": "flake-parts",
         "mnw": "mnw",
-        "ndg": "ndg",
         "nixpkgs": [
           "nixpkgs"
         ],
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1780042000,
-        "narHash": "sha256-RxFOqPMAlbWiWwh7CQ0bIHIdt4D5gAttx3YVifBBWgE=",
+        "lastModified": 1782547999,
+        "narHash": "sha256-UcSkRzXs/jJNBpZ0xHFYOybI1yiah4miTUDf5lczjeI=",
         "owner": "notashelf",
         "repo": "nvf",
-        "rev": "07b57ebc6c9e778c536ac0ff1b01fb18dc90239a",
+        "rev": "058a41f21ebbc404f3e0356f90dcd172fc7a4e6e",
         "type": "github"
       },
       "original": {
