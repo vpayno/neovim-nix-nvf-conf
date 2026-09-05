@@ -68,9 +68,16 @@
           "isort"
         ];
         dap.enable = true;
-        lsp.servers = [
-          "basedpyright"
+        lsp = {
+          enable = true;
+          servers = [
+            "basedpyright"
+          ];
+        };
+        extraDiagnostics.types = [
+          "mypy"
         ];
+        treesitter.enable = true;
       };
       r.enable = false;
       ruby.enable = false;
@@ -139,6 +146,9 @@
       otter-nvim.enable = true;
       null-ls = {
         enable = lib.mkDefault false;
+      };
+      presets = {
+        python-lsp-server.enable = true;
       };
     };
 
