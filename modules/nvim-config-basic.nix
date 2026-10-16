@@ -136,7 +136,7 @@
         };
       };
       xml.enable = true;
-      yaml.enalbe = true;
+      yaml.enable = true;
     };
 
     lsp = {
