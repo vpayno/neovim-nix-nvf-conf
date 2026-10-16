@@ -39,6 +39,7 @@
       };
       haskell.enable = true;
       java.enable = true;
+      json.enable = true;
       kotlin.enable = true;
       lua = {
         enable = true;
@@ -89,6 +90,7 @@
       };
       sql.enable = true;
       terraform.enable = true;
+      toml.enable = true;
       typescript.enable = true;
       typst = {
         enable = true;
@@ -133,6 +135,8 @@
           };
         };
       };
+      xml.enable = true;
+      yaml.enable = true;
     };
 
     lsp = {
@@ -282,6 +286,7 @@
     };
 
     utility.outline.aerial-nvim.enable = true;
+    utility.csvview.enable = true;
 
     options.mouse = "v";
 
