@@ -285,8 +285,17 @@
       };
     };
 
-    utility.outline.aerial-nvim.enable = true;
+    mini.surround.enable = true;
+    mini.tabline.enable = true;
+
+    utility.ccc.enable = true;
     utility.csvview.enable = true;
+    utility.diffview-nvim.enable = true;
+    utility.icon-picker.enable = true;
+    utility.images.image-nvim.enable = true;
+    utility.outline.aerial-nvim.enable = true;
+    utility.yanky-nvim.enable = true;
+    utility.yanky-nvim.setupOpts.ring.storage = "sqlite";
 
     options.mouse = "v";
 
