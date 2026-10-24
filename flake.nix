@@ -3,9 +3,16 @@
   inputs = {
     nixpkgs.url = "github:nixOS/nixpkgs/nixos-unstable";
 
+    nixpkgs-stable.url = "github:nixOS/nixpkgs/nixos-26.05";
+
     nvf = {
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nvf-stable = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
     treefmt-conf = {
@@ -18,6 +25,7 @@
     {
       self,
       nixpkgs,
+      nixpkgs-stable,
       nvf,
       treefmt-conf,
       ...
@@ -52,6 +60,18 @@
             pkgs = nixpkgs.legacyPackages.${system};
             modules = [ ./nvf-configuration-full.nix ];
           }).neovim;
+
+        basic-stable =
+          (nvf.lib.neovimConfiguration {
+            pkgs = nixpkgs-stable.legacyPackages.${system};
+            modules = [ ./nvf-configuration-basic.nix ];
+          }).neovim;
+
+        full-stable =
+          (nvf.lib.neovimConfiguration {
+            pkgs = nixpkgs-stable.legacyPackages.${system};
+            modules = [ ./nvf-configuration-full.nix ];
+          }).neovim;
       });
 
       devShells = forAllSystems (
@@ -64,6 +84,15 @@
             name = "default";
             packages = [
               self.packages.${system}.full
+            ];
+            shellHook = ''
+              ${pkgs.lib.getExe pkgs.cowsay} "neovim-nix-nvf-conf shell"
+            '';
+          };
+          default-stable = pkgs.mkShell {
+            name = "default";
+            packages = [
+              self.packages.${system}.full-stable
             ];
             shellHook = ''
               ${pkgs.lib.getExe pkgs.cowsay} "neovim-nix-nvf-conf shell"
