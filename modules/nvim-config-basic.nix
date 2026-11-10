@@ -73,6 +73,7 @@
           enable = true;
           servers = [
             "basedpyright"
+            "ruff"
           ];
         };
         extraDiagnostics.types = [
@@ -153,6 +154,13 @@
       };
       presets = {
         python-lsp-server.enable = true;
+      };
+      servers = {
+        python-lsp-server = {
+          filetypes = [
+            "py"
+          ];
+        };
       };
     };
 
