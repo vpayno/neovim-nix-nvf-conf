@@ -60,6 +60,7 @@
         ];
         lsp.servers = [
           "nil"
+          "nixd"
         ];
       };
       python = {
@@ -154,11 +155,23 @@
       };
       presets = {
         python-lsp-server.enable = true;
+        nil.enable = true;
+        nixd.enable = true;
       };
       servers = {
         python-lsp-server = {
           filetypes = [
             "py"
+          ];
+        };
+        nil = {
+          filetypes = [
+            "nix"
+          ];
+        };
+        nixd = {
+          filetypes = [
+            "nix"
           ];
         };
       };
