@@ -1,5 +1,6 @@
 # ./modules/nvim-config-full.nix
 {
+  config,
   pkgs,
   lib,
   ...
@@ -85,8 +86,14 @@
       ruby.enable = true;
       rust = {
         enable = true;
-        extensions.crates-nvim.enable = true;
-        dap.enable = true;
+        extensions = {
+          crates-nvim.enable = true;
+          rustaceanvim = {
+            enable = true;
+          };
+        };
+        dap.enable = !config.vim.languages.rust.extensions.rustaceanvim.enable;
+        lsp.enable = !config.vim.languages.rust.extensions.rustaceanvim.enable;
         treesitter.enable = true;
       };
       sql.enable = true;
