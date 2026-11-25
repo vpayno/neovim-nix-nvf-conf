@@ -25,11 +25,9 @@
       clang.enable = true;
       dart = {
         enable = false; # error: attribute 'flutter-tools' missing
-        flutter-tools = {
-          enable = true;
-          color = {
-            enable = true;
-            virtualText.enable = true;
+        extensions = {
+          flutter-tools = {
+            enable = false;
           };
         };
       };
