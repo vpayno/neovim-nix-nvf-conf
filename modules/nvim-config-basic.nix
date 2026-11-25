@@ -304,6 +304,12 @@
       };
     };
 
+    tabline = {
+      nvimBufferline = {
+        enable = true;
+      };
+    };
+
     mini.surround.enable = true;
     mini.tabline.enable = true;
 

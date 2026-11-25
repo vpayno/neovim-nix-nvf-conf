@@ -310,6 +310,28 @@
       };
     };
 
+    terminal = {
+      toggleterm = {
+        enable = true;
+        setupOpts = {
+          direction = "tab"; # horizontal, vertical, tab, float
+          winbar = {
+            enable = true;
+          };
+        };
+        lazygit = {
+          enable = true;
+          direction = "float"; # horizontal, vertical, tab, float
+        };
+      };
+    };
+
+    tabline = {
+      nvimBufferline = {
+        enable = true;
+      };
+    };
+
     mini.surround.enable = true;
     mini.tabline.enable = true;
 
