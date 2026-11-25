@@ -16,11 +16,28 @@
     languages = {
       enableFormat = true;
       enableTreesitter = true;
-
       assembly.enable = true;
       bash = {
         enable = true;
-        extraDiagnostics.enable = true;
+        extraDiagnostics = {
+          enable = true;
+          types = [
+            "shellcheck"
+          ];
+        };
+        format = {
+          enable = true;
+          type = [
+            "shfmt"
+          ];
+        };
+        lsp = {
+          enable = true;
+          servers = [
+            "bash-language-server"
+          ];
+        };
+        treesitter.enable = true;
       };
       clang.enable = true;
       dart = {
@@ -35,16 +52,77 @@
       go = {
         enable = true;
         dap.enable = true;
+        format = {
+          enable = true;
+          type = [
+            "gofmt"
+            "goimports"
+          ];
+        };
+        lsp = {
+          enable = true;
+          servers = [
+            "gopls"
+          ];
+        };
+        treesitter.enable = true;
       };
       haskell.enable = true;
       java.enable = true;
-      json.enable = true;
+      json = {
+        enable = true;
+        format = {
+          enable = true;
+          type = [
+            "jsonfmt"
+          ];
+        };
+        lsp = {
+          enable = true;
+          servers = [
+            "vscode-json-language-server"
+          ];
+        };
+        treesitter.enable = true;
+      };
+      jq = {
+        enable = true;
+        format = {
+          enable = true;
+          type = [
+            "jqfmt"
+          ];
+        };
+        lsp = {
+          enable = true;
+          servers = [
+            "jq-lsp"
+          ];
+        };
+        treesitter.enable = true;
+      };
       kotlin.enable = true;
       lua = {
         enable = true;
         extensions.lazydev.enable = true;
+        treesitter.enable = true;
       };
-      markdown.enable = true;
+      markdown = {
+        enable = true;
+        format = {
+          enable = true;
+          type = [
+            "mdformat"
+          ];
+        };
+        lsp = {
+          enable = true;
+          servers = [
+            "marksman"
+          ];
+        };
+        treesitter.enable = true;
+      };
       nix = {
         enable = true;
         extraDiagnostics = {
@@ -59,14 +137,20 @@
         ];
         lsp.servers = [
           "nil"
+          "nixd"
         ];
+        treesitter.enable = true;
       };
       python = {
         enable = true;
-        format.type = [
-          "black"
-          "isort"
-        ];
+        format = {
+          enable = true;
+          type = [
+            "ruff"
+            "ruff-fix"
+            "isort"
+          ];
+        };
         dap.enable = true;
         lsp = {
           enable = true;
@@ -96,7 +180,22 @@
       };
       sql.enable = true;
       terraform.enable = true;
-      toml.enable = true;
+      toml = {
+        enable = true;
+        format = {
+          enable = true;
+          type = [
+            "taplo"
+          ];
+        };
+        lsp = {
+          enable = true;
+          servers = [
+            "taplo"
+          ];
+        };
+        treesitter.enable = true;
+      };
       typescript.enable = true;
       typst = {
         enable = true;
@@ -141,8 +240,49 @@
           };
         };
       };
-      xml.enable = true;
-      yaml.enable = true;
+      xml = {
+        enable = true;
+        lsp = {
+          enable = true;
+          servers = [
+            "lemminx"
+          ];
+        };
+        treesitter.enable = true;
+      };
+      yaml = {
+        enable = true;
+        format = {
+          enable = true;
+          type = [
+            "prettier"
+          ];
+        };
+        lsp = {
+          enable = true;
+          servers = [
+            "yaml-language-server"
+            "gitlab-ci-ls"
+          ];
+        };
+        treesitter.enable = true;
+      };
+      just = {
+        enable = true;
+        format = {
+          enable = true;
+          type = [
+            "just"
+          ];
+        };
+        lsp = {
+          enable = true;
+          servers = [
+            "just-lsp"
+          ];
+        };
+        treesitter.enable = true;
+      };
     };
 
     lsp = {
@@ -161,6 +301,7 @@
         python-lsp-server.enable = true;
         nil.enable = true;
         nixd.enable = true;
+        just-lsp.enable = true;
       };
       servers = {
         python-lsp-server = {
@@ -357,6 +498,84 @@
       indent-blankline.setupOpts.whitespace = {
         highlight = true;
         remove_blankline_trail = true;
+      };
+    };
+
+    formatter = {
+      conform-nvim = {
+        presets = {
+          isort.enable = true;
+          black.enable = false;
+          ruff.enable = true;
+          ruff-fix.enable = true;
+          shfmt.enable = true;
+          taplo.enable = true;
+          jsonfmt.enable = true;
+          jqfmt.enable = true;
+          just.enable = true;
+          rustfmt.enable = true;
+          mdformat.enable = true;
+          dockerfmt.enable = true;
+          gofmt.enable = true;
+          gofumpt.enable = false;
+          goimports.enable = true;
+          clang-format.enable = true;
+          gawk.enable = true;
+        };
+        setupOpts = {
+          formatters = {
+            isort.append_args = [
+              "--profile=black"
+              "--multi-line=3"
+              "--wrap-length=10"
+              "--line-length=11"
+              "--dont-follow-links"
+              "--ensure-newline-before-comments"
+            ];
+            black.append_args = [
+              "--line-length=120"
+            ];
+            ruff.append_args = [
+              "--line-length=120"
+            ];
+            shfmt.append_args = [
+              "--indent=0"
+              "--case-indent"
+              "--space-redirects"
+              "--keep-padding"
+            ];
+            taplo.append_args = [
+              "--option=align_entries=true"
+              "--option=align_comments=true"
+              "--option=array_trailing_comma=true"
+              "--option=array_auto_expand=true"
+              "--option=array_auto_collapse=false"
+              "--option=column_width=1"
+              "--option=indent_tables=true"
+              "--option=indent_entries=false"
+              "--option=indent_string=  "
+              "--option=trailing_newline=true"
+              "--option=reorder_keys=true"
+              "--option=reorder_arrays=true"
+              "--option=reorder_inline_tables=true"
+              "--option=allowed_blank_lines=1"
+            ];
+            jsonfmt.append_args = [
+              "--indent=  "
+            ];
+            jqfmt.append_args = [
+              "-ar"
+              "-ob"
+              "-op pipe"
+              # "-op comma,add,sub,mul,div,mod,eq,ne,gt,lt,ge,le,and,or,alt,assign,modify,updateAdd,updateSub,updateMul,updateDiv,updateMod,updateAlt"
+            ];
+            mdformat.append_args = [
+              "--wrap=120"
+              "--end-of-line=lf"
+              "--number"
+            ];
+          };
+        };
       };
     };
   };
